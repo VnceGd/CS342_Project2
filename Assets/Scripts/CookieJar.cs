@@ -1,18 +1,17 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CookieJar : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void OnCollisionEnter(Collision collision)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        GameObject other = collision.gameObject;
+        if(other.tag == "Player")
+        {
+            if(other.name == "Head")
+            {
+                // Trigger one of the win conditions
+                // (Check off "Eat cookie" on the list of tasks)
+            }
+        }
     }
 }

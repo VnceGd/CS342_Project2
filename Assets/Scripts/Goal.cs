@@ -1,18 +1,23 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Goal : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject eventManager;
+    private EventHandler eventHandler;
+
+    public GameObject victoryScreen;
+
+    public void Start()
     {
-        
+        eventHandler = eventManager.GetComponent<EventHandler>();
     }
 
-    // Update is called once per frame
-    void Update()
+    // Tell EventHandler to show victory screen
+    public void OnTriggerEnter(Collider other)
     {
-        
+        if (other.gameObject.tag == "Player")
+        {
+            eventHandler.GameOver(true);
+        }
     }
 }

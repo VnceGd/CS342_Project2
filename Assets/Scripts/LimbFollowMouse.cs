@@ -1,11 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class LimbFollowMouse : MonoBehaviour
 {
-    public float mouseSensitivity = 500.0f;
-    public float torqueSensitivity = 100.0f;
+    public float mouseSensitivity = 300.0f;
+    public float torqueSensitivity = 5.0f;
     public Rigidbody spine;
 
     private Rigidbody limbBody;
@@ -101,27 +99,7 @@ public class LimbFollowMouse : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay(Collider other)
-    {
-        if (enabled)
-        {
-            colliding = true;
-            if (other.gameObject.tag == "Throwable")
-            {
-                throwable = other.gameObject;
-            }
-            else if (other.gameObject.tag == "Dynamic")
-            {
-                dynamic = other.gameObject;
-            }
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        colliding = false;
-    }
-
+    // While colliding, check if other object is Throwable or Dynamic
     private void OnCollisionStay(Collision collision)
     {
         if(enabled && collision.gameObject.tag != "Player")
@@ -139,6 +117,28 @@ public class LimbFollowMouse : MonoBehaviour
     }
 
     private void OnCollisionExit(Collision collision)
+    {
+        colliding = false;
+    }
+
+    // While colliding with trigger, check if other object is Throwable or Dynamic
+    private void OnTriggerStay(Collider other)
+    {
+        if (enabled)
+        {
+            colliding = true;
+            if (other.gameObject.tag == "Throwable")
+            {
+                throwable = other.gameObject;
+            }
+            else if (other.gameObject.tag == "Dynamic")
+            {
+                dynamic = other.gameObject;
+            }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
     {
         colliding = false;
     }

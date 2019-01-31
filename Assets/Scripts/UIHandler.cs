@@ -20,7 +20,7 @@ public class UIHandler : MonoBehaviour
 
         panelOpacity = 0.0f;
         blackOutPanel.GetComponent<Image>().color = new Color(0.0f, 0.0f, 0.0f, panelOpacity);
-
+        blackOutPanel.SetActive(false);
         fading = false;
     }
 
@@ -37,13 +37,15 @@ public class UIHandler : MonoBehaviour
             else
             {
                 fading = false;
-                eventHandler.GameOver();
+                eventHandler.GameOver(false);
             }
         }
     }
 
+    // Start blacking out
     public void BlackOut()
     {
         fading = true;
+        blackOutPanel.SetActive(true);
     }
 }
