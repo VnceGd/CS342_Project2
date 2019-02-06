@@ -109,7 +109,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 8
   m_CollisionDetection: 0
 --- !u!59 &67274383
 HingeJoint:
@@ -123,7 +123,7 @@ HingeJoint:
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: -0.98000026, z: 0}
-  m_UseSpring: 0
+  m_UseSpring: 1
   m_Spring:
     spring: 1
     damper: 1
@@ -158,9 +158,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a1284d81714e46de878e67cae7e08d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 300
-  torqueSensitivity: 5
+  mouseSensitivity: 500
+  torqueSensitivity: 7
+  maxVelocity: 5
   spine: {fileID: 640196999}
+  throwable: {fileID: 0}
+  throwableJoint: {fileID: 0}
+  dynamic: {fileID: 0}
 --- !u!1 &150089641
 GameObject:
   m_ObjectHideFlags: 0
@@ -282,7 +286,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 1, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0.83000004, z: -0.75}
+  m_ConnectedAnchor: {x: 0, y: 0.8299999, z: -0.75}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -415,7 +419,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 8
   m_CollisionDetection: 0
 --- !u!59 &458191489
 HingeJoint:
@@ -428,8 +432,8 @@ HingeJoint:
   m_Anchor: {x: 0, y: 1, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: -0.98, z: 0}
-  m_UseSpring: 0
+  m_ConnectedAnchor: {x: 0, y: -0.9799998, z: 0}
+  m_UseSpring: 1
   m_Spring:
     spring: 1
     damper: 1
@@ -464,9 +468,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a1284d81714e46de878e67cae7e08d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 300
-  torqueSensitivity: 5
+  mouseSensitivity: 500
+  torqueSensitivity: 7
+  maxVelocity: 5
   spine: {fileID: 640196999}
+  throwable: {fileID: 0}
+  throwableJoint: {fileID: 0}
+  dynamic: {fileID: 0}
 --- !u!1 &640196998
 GameObject:
   m_ObjectHideFlags: 0
@@ -569,7 +577,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 640196998}
   serializedVersion: 2
-  m_Mass: 2
+  m_Mass: 1
   m_Drag: 1
   m_AngularDrag: 1
   m_UseGravity: 1
@@ -698,7 +706,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 1, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: -0.83000004, z: 0.3}
+  m_ConnectedAnchor: {x: 0, y: -0.8299999, z: 0.3}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -831,7 +839,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 8
   m_CollisionDetection: 0
 --- !u!59 &696242925
 HingeJoint:
@@ -845,7 +853,7 @@ HingeJoint:
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: -0.98000026, z: 0}
-  m_UseSpring: 0
+  m_UseSpring: 1
   m_Spring:
     spring: 1
     damper: 1
@@ -880,9 +888,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a1284d81714e46de878e67cae7e08d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 300
-  torqueSensitivity: 5
+  mouseSensitivity: 500
+  torqueSensitivity: 7
+  maxVelocity: 5
   spine: {fileID: 640196999}
+  throwable: {fileID: 0}
+  throwableJoint: {fileID: 0}
+  dynamic: {fileID: 0}
 --- !u!1 &729236838
 GameObject:
   m_ObjectHideFlags: 0
@@ -1063,7 +1075,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 1, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0.83000004, z: 0.75}
+  m_ConnectedAnchor: {x: 0, y: 0.8299999, z: 0.75}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -1299,7 +1311,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 1, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: -0.83000004, z: -0.3}
+  m_ConnectedAnchor: {x: 0, y: -0.8299999, z: -0.3}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -1432,7 +1444,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 8
   m_CollisionDetection: 0
 --- !u!59 &1831893050
 HingeJoint:
@@ -1445,8 +1457,8 @@ HingeJoint:
   m_Anchor: {x: 0, y: 1, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: -0.97999996, z: 0}
-  m_UseSpring: 0
+  m_ConnectedAnchor: {x: 0, y: -0.9799997, z: 0}
+  m_UseSpring: 1
   m_Spring:
     spring: 1
     damper: 1
@@ -1481,9 +1493,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a1284d81714e46de878e67cae7e08d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 300
-  torqueSensitivity: 5
+  mouseSensitivity: 500
+  torqueSensitivity: 7
+  maxVelocity: 5
   spine: {fileID: 640196999}
+  throwable: {fileID: 0}
+  throwableJoint: {fileID: 0}
+  dynamic: {fileID: 0}
 --- !u!1001 &9148507861094334235
 PrefabInstance:
   m_ObjectHideFlags: 0

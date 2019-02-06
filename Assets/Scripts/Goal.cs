@@ -17,6 +17,7 @@ public class Goal : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            eventHandler.CompleteTask(1); // Bed task
             eventHandler.GameOver(true);
         }
     }

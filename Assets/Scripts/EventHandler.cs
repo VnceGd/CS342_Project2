@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class EventHandler : MonoBehaviour
 {
@@ -17,11 +18,12 @@ public class EventHandler : MonoBehaviour
     private float timeRemaining;
     private bool gameInProgress;
 
-    // ! To-Do !
     public bool[] taskList = new bool[2];
     // Tasks:
-    //   - Eat cookie
-    //   - Sleep in bed
+    //   1. Eat cookie
+    //   2. Go to bed
+    public TextMeshProUGUI cookieTask;
+    public TextMeshProUGUI bedTask;
 
     // Start is called before the first frame update
     public void Start()
@@ -36,7 +38,7 @@ public class EventHandler : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if(gameInProgress)
+        if (gameInProgress)
         {
             if (timeRemaining > 0.0f)
             {
@@ -65,7 +67,20 @@ public class EventHandler : MonoBehaviour
                 }
             }
         }
-        
+    }
+
+    public void CompleteTask(int index)
+    {
+        taskList[index] = true;
+        switch (index)
+        {
+            case 0:
+                cookieTask.fontStyle = FontStyles.Strikethrough;
+                break;
+            case 1:
+                bedTask.fontStyle = FontStyles.Strikethrough;
+                break;
+        }
     }
 
     // Reload the current scene
@@ -80,7 +95,7 @@ public class EventHandler : MonoBehaviour
         gameInProgress = false;
         limbManager.enabled = false;
         Cursor.lockState = CursorLockMode.None;
-        if(victory)
+        if (victory)
         {
             victoryScreen.SetActive(true);
         }
@@ -89,10 +104,10 @@ public class EventHandler : MonoBehaviour
             gameOverScreen.SetActive(true);
         }
     }
-    
+
     // Quit the game
     public void QuitGame()
     {
-        Application.Quit();
+        SceneManager.LoadScene("MainMenu");
     }
 }

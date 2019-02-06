@@ -2,16 +2,25 @@
 
 public class CookieJar : MonoBehaviour
 {
+    public GameObject cookie;
+    public GameObject smashParticles;
+
+    private Rigidbody jarBody;
+
+    public void Start()
+    {
+        jarBody = GetComponent<Rigidbody>();
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
-        GameObject other = collision.gameObject;
-        if(other.tag == "Player")
+        if (Mathf.Abs(jarBody.velocity.x) > 1f || Mathf.Abs(jarBody.velocity.y) > 1f)
         {
-            if(other.name == "Head")
-            {
-                // Trigger one of the win conditions
-                // (Check off "Eat cookie" on the list of tasks)
-            }
+            GameObject cookieClone = Instantiate(cookie, transform);
+            GameObject particleClone = Instantiate(smashParticles, transform);
+            cookieClone.transform.parent = null;
+            particleClone.transform.parent = null;
+            Destroy(gameObject);
         }
     }
 }
