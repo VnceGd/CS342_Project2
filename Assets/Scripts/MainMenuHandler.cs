@@ -5,7 +5,7 @@ public class MainMenuHandler : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadScene("House");
+        SceneManager.LoadScene("House_ver02");
     }
 
     public void QuitGame()

@@ -223,7 +223,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0, g: 0.11046457, b: 1, a: 1}
+      maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -976,7 +976,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 30
+        scalar: 3
         minScalar: 30
         maxCurve:
           serializedVersion: 2
@@ -4698,7 +4698,7 @@ ParticleSystem:
 --- !u!199 &1768220921116595439
 ParticleSystemRenderer:
   serializedVersion: 6
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -4769,3 +4769,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd8b2e9444a6740d0b302718015d20df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lifetime: 1
